@@ -44,7 +44,7 @@ class AppBarWidget extends StatelessWidget {
           onPressed: logout,
           icon: Icon(
             Icons.logout,
-            color: theme.primaryColor,
+            color: theme.primaryIconTheme.color,
           ),
         ),
       ],
