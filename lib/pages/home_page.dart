@@ -1,7 +1,6 @@
 import 'package:chat_firebase/widgets/app_bar_widget.dart';
 import 'package:chat_firebase/widgets/contact_widget.dart';
-import 'package:chat_firebase/widgets/image_contact_widget.dart';
-import 'package:chat_firebase/widgets/status_contact_widget.dart';
+import 'package:chat_firebase/widgets/filter_bar_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,8 +21,10 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           children: [
             Padding(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(
+                vertical: 8.0,
+                horizontal: 16.0,
+              ),
               child: AppBarWidget(
                 userName: "Bruno",
                 unreadChat: 48,
@@ -32,8 +33,31 @@ class _HomePageState extends State<HomePage> {
             ),
             const Flexible(
               child: Padding(
-                padding: EdgeInsets.only(left: 8, top: 8, bottom: 16),
+                padding: EdgeInsets.only(
+                  left: 8,
+                  top: 8,
+                  bottom: 16,
+                ),
                 child: ContactWidget(),
+              ),
+            ),
+            Expanded(
+              flex: 2,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey.shade100,
+                  borderRadius: const BorderRadius.only(
+                    topLeft: Radius.circular(50),
+                    topRight: Radius.circular(50),
+                  ),
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 16.0,
+                    horizontal: 16.0,
+                  ),
+                  child: FilterBarWidget(),
+                ),
               ),
             ),
           ],
