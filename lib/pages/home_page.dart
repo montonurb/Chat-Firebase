@@ -44,6 +44,10 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               flex: 2,
               child: Container(
+                padding: const EdgeInsets.symmetric(
+                  vertical: 16.0,
+                  horizontal: 16.0,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.grey.shade100,
                   borderRadius: const BorderRadius.only(
@@ -51,12 +55,10 @@ class _HomePageState extends State<HomePage> {
                     topRight: Radius.circular(50),
                   ),
                 ),
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(
-                    vertical: 16.0,
-                    horizontal: 16.0,
-                  ),
-                  child: FilterBarWidget(),
+                child: const Column(
+                  children: [
+                    FilterBarWidget(),
+                  ],
                 ),
               ),
             ),
